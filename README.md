@@ -6,7 +6,7 @@ This is the official **Blog** plugin developed by plentymarkets. Integrate the b
 
 ## Requirements
 
-This is a plugin for [plentymarkets 7](https://www.plentymarkets.com). A layout plugin is required in order to integrate this payment method in your online store. We recommend using the plentymarkets plugin [Ceres](https://github.com/plentymarkets/plugin-ceres).
+This is a plugin for [plentymarkets 7](https://www.plentymarkets.com). A layout plugin is required in order to integrate this blog in your online store. We recommend using the plentymarkets plugin [Ceres](https://github.com/plentymarkets/plugin-ceres).
 
 ## Installing
 
