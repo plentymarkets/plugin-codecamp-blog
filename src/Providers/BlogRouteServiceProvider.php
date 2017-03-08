@@ -1,6 +1,6 @@
 <?php
 
-namespace ToDoList\Providers;
+namespace Blog\Providers;
 
 use Plenty\Plugin\RouteServiceProvider;
 use Plenty\Plugin\Routing\Router;
@@ -16,7 +16,7 @@ class BlogRouteServiceProvider extends RouteServiceProvider
      */
     public function map(Router $router)
     {
-        // Add routes
+        $router->get('blog','Blog\Controllers\BlogController@showBlog');
     }
 
 }
