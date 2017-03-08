@@ -1,0 +1,21 @@
+{
+    "version"           : "0.0.1",
+    "name"              : "Blog",
+    "license"           : "AGPL-3.0",
+    "pluginIcon"        : "icon_plugin_xs.png",
+    "price"             : 0.00,
+    "description"       : "Blog plugin for plentymarkets online stores",
+    "shortDescription"  : {"de": "Blog für plentymarkets Webshops","en": "Blog for plentymarkets online stores"},
+    "categories"        : ["3517"],
+    "author"            : "plentymarkets GmbH",
+    "authorIcon"        : "icon_author_xs.png",
+    "keywords"          : ["blog", "official", "plentymarkets"],
+    "type"              : "template",
+    "namespace"         : "Blog",
+    "serviceProvider"   : "Blog\\Providers\\BlogServiceProvider",
+    "javaScriptFiles"   : [],
+    "containers"        : [],
+    "dataProviders"     : [],
+    "dependencies"      : [],
+    "runOnBuild"        : []
+}
