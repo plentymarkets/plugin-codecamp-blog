@@ -11,6 +11,7 @@ use Plenty\Plugin\Templates\Twig;
 class BlogController extends Controller
 {
     /**
+     * @param Twig $twig
      * @param BlogRepositoryContract $blogRepo
      * @return string
      */
@@ -33,6 +34,7 @@ class BlogController extends Controller
     }
 
     /**
+     * @param Twig $twig
      * @param string $title
      * @param BlogRepositoryContract $blogRepo
      * @return string
