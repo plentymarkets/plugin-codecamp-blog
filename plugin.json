@@ -1,6 +1,7 @@
 {
     "version"           : "0.0.1",
     "name"              : "Blog",
+    "marketplaceName"   : {"de": "CodeCamp 2017 Blog","en": "CodeCamp 2017 Blog"},
     "license"           : "AGPL-3.0",
     "pluginIcon"        : "icon_plugin_xs.png",
     "price"             : 0.00,
