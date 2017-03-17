@@ -1,0 +1,96 @@
+//
+// blog list item
+//
+
+// responsive font size
+html {
+	font-size: 13px;
+}
+@include media-breakpoint-up(sm) {
+	html {
+		font-size: 14px;
+	}
+}
+@include media-breakpoint-up(md) {
+	html {
+		font-size: 15px;
+	}
+}
+@include media-breakpoint-up(lg) {
+	html {
+		font-size: 16px;
+	}
+}
+
+// general styles
+.of-hidden {
+	overflow: hidden;
+}
+
+// typography
+.fs-5 {
+	font-size: 1.25rem !important;
+}
+.fs-6 {
+	font-size: 1.5rem !important;
+}
+
+// text colors
+.text-secondary {
+	color: $brand-secondary;
+}
+a.text-secondary:hover,
+a.text-secondary:focus {
+	color: $brand-secondary-hover-color;
+}
+
+// bg colors
+.bgcolor-primary {
+	background-color: $brand-primary;
+}
+.bgcolor-secondary {
+	background-color: $brand-secondary;
+}
+
+
+// zoom-img-hover
+.zoom-img-hover {
+	
+	@include transition($zoom-img-hover-transition);
+	
+	&:hover {
+		transform: scale($zoom-img-hover-duration);
+	}
+	
+}
+
+// card img left and right
+.card-img-left {
+	@include border-left-radius($card-border-radius-inner);
+}
+.card-img-right {
+	@include border-right-radius($card-border-radius-inner);
+}
+
+@include make-responsive-card-imgs();
+
+// custom select button style
+.custom-select[class*="btn-"] {
+	@include transition($btn-transition);
+}
+.custom-select.btn-secondary {
+  @include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+}
+
+/*
+@include media-breakpoint-up(md) {
+	.card-img-md-left {
+		@include border-left-radius($card-border-radius-inner);
+		@include border-right-radius(initial);
+	}
+	.card-img-md-right {
+		@include border-right-radius($card-border-radius-inner);
+		@include border-left-radius(initial);
+	}
+}
+*/

@@ -1,0 +1,37 @@
+//
+// aside blog list item
+//
+
+.aside-blog-list-item {
+	
+	//@include box-shadow($card-box-shadow);
+	
+	.list-header {
+		font-weight: normal;
+		font-size: 1rem;
+		line-height: 1.1;
+	}
+	
+	a {
+		display: block;
+		width: 100%;
+		color: $gray;
+	}
+	
+	img {
+		min-width: 100%;
+		min-height: 100%;
+		object-fit: cover;
+		
+		height: 5rem;
+		
+		@include media-breakpoint-up(sm) {
+		}
+		
+	}
+	
+}
+
+
+
+

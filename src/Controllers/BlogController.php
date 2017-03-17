@@ -14,10 +14,11 @@ class BlogController extends Controller
      * @param BlogRepositoryContract $blogRepo
      * @return string
      */
-    public function getBlogList(BlogRepositoryContract $blogRepo):string
+    public function getBlogList(Twig $twig, BlogRepositoryContract $blogRepo):string
     {
         $blogList = $blogRepo->getBlogList();
-        return json_encode($blogList);
+        $templateData = array('blogList' => $blogList);
+        return $twig->render('Blog::content.BlogList', $templateData);
     }
 
     /**
@@ -36,10 +37,11 @@ class BlogController extends Controller
      * @param BlogRepositoryContract $blogRepo
      * @return string
      */
-    public function getBlogEntry(string $title, BlogRepositoryContract $blogRepo): string
+    public function getBlogEntry(Twig $twig, string $title, BlogRepositoryContract $blogRepo): string
     {
         $blogEntry = $blogRepo->getBlogEntry($title);
-        return json_encode($blogEntry);
+        $templateData = array('blogEntry' => $blogEntry);
+        return $twig->render('Blog::content.BlogEntry', $templateData);
     }
 
     /**

@@ -1,0 +1,16 @@
+// variables
+
+// ADDITIONAL INDIVIDUAL STYLES
+
+// appearance
+$brand-primary: #0082bd;
+//$card-box-shadow-color:           rgba(0, 0, 0, 0.1);
+//$card-box-shadow:                 0 0 10px 0 $card-box-shadow-color;
+$brand-secondary:                   $brand-info !default;
+$brand-secondary-hover-color:       lighten($brand-secondary, 15%) !default;
+
+// zoom img hover
+$zoom-img-hover-transition:         transform 1.5s ease;
+$zoom-img-hover-duration:           1.1;
+
+$fa-font-path: "../documents/fonts" !default;

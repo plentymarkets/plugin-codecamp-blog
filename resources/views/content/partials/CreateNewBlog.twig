@@ -1,0 +1,110 @@
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Neuer Blog-Beitrag</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="blog-form">
+
+                    <div class="text-center muted small text-uppercase text-primary">Blog Content</div>
+
+                    <div class="form-group is-required">
+                        <label for="title" class="form-control-label">Titel (H1)</label>
+                        <input type="text" class="form-control" id="title" placeholder="z.B. „Neues Blog-Template online!“">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="url" class="form-control-label">URL-Name</label>
+                        <input type="text" class="form-control" id="url" placeholder="z.B. „neues-blog-template-online“ (wird ggf. automatisch gefüllt)">
+                    </div>
+
+                    <div class="form-group is-required">
+                        <label for="preview-text" class="form-control-label">Vorschautext</label>
+                        <textarea class="form-control" id="preview-text" placeholder="Kurze Teaser-Ankündigung des Blog-Themas"></textarea>
+                    </div>
+
+                    <div class="form-group is-required">
+                        <label for="content" class="form-control-label">Text</label>
+                        <textarea class="form-control" id="content" rows="16"></textarea>
+                    </div>
+
+                    <div class="form-group is-required">
+                        <label for="alt" class="form-control-label">Bild URL</label>
+                        <input type="text" class="form-control" id="imgUrl">
+                        <small class="form-text text-muted">URL des Bildes</small>
+                    </div>
+
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input id="isActive" type="checkbox" class="form-check-input">
+                            Öffentlich
+                        </label>
+                    </div>
+
+                    <div class="form-group is-required">
+                        <label for="author" class="form-control-label">Autor</label>
+                        <input type="text" class="form-control" id="author" placeholder="z.B. „Max Mustermann“">
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close" aria-hidden="true"></i>&emsp;Abbrechen</button>
+                <button id="saveNewBlog" type="button" class="btn btn-success"><i class="fa fa-save" aria-hidden="true"></i>&emsp;Speichern</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $("textarea").keydown(function(e) {
+        if(e.keyCode === 9) {
+
+            var start = this.selectionStart;
+            var end = this.selectionEnd;
+
+            var $this = $(this);
+            var value = $this.val();
+
+            $this.val(value.substring(0, start)
+                    + "\t"
+                    + value.substring(end));
+
+            this.selectionStart = this.selectionEnd = start + 1;
+
+            e.preventDefault();
+        }
+    });
+
+    $("#saveNewBlog").click(function()
+    {
+        var data =
+        {
+            plentyId   : 134,
+            authorName : $("#author").val(),
+            title      : $("#title").val(),
+            titleUrl   : $("#url").val(),
+            previewText: $("#preview-text").val(),
+            text       : $("#content").val(),
+            imageUrl   : $("#imgUrl").val(),
+            isActive   : $("#isActive").is(':checked') ? 1 : 0
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "/blog",
+            contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+            data: data,
+            dataType: "json",
+            success: function()
+            {
+                alert("Done");
+                location.reload(true);
+            }
+        });
+    });
+</script>

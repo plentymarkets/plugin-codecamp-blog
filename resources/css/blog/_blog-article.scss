@@ -1,0 +1,19 @@
+//
+// blog article
+//
+
+.blog-tag {
+	
+	background-color: $brand-secondary;
+	@include transition($transition-base);
+		
+	&:hover,
+	&:active,
+	&.active {
+		background-color: $brand-primary;
+	}
+}
+
+
+
+

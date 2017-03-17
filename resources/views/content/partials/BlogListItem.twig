@@ -1,0 +1,53 @@
+<article class="blog-list-item card mb-4 {% if not blog.isActive %}blog-item-inactive{% endif %}" itemprop="blogPost" itemscope
+         itemtype="https://schema.org/BlogPosting">
+
+    <div class="row align-items-stretch {% if loop.index is divisible by(2) %}flex-row-reverse{% endif %}">
+
+        <div class="blog-list-img-col col-md-6{% if loop.index is divisible by(2) %} pr-md-0 {% else %} pl-md-0 {% endif %} d-flex">
+            <a class="card-img-top{% if loop.index is divisible by(2) %} card-img-md-right {% else %} card-img-md-left {% endif %} of-hidden" href="/blog/{{ blog.titleUrl }}">
+                <img class="blog-list-img img-fluid d-block zoom-img-hover" src="{{ blog.imageUrl }}" alt="Image 1"
+                     itemprop="image">
+            </a>
+        </div>
+
+        <div class="blog-list-text-col has-fadeout-gradient-card col-md-6 {% if loop.index is divisible by(2) %} pl-md-0 {% else %} pr-md-0 {% endif %} d-flex">
+            <div class="blog-list-text align-self-center card-block pb-1">
+                <header>
+                    <h2 class="" itemprop="headline"><a class="d-block" href="/blog/{{ blog.titleUrl }}" itemprop="url">Blog
+                            {{ blog.title }}</a></h2>
+
+                    <meta itemprop="description" content="Preview Text">
+                    <ul class="blog-meta-list list-inline small text-secondary">
+                        <li class="list-inline-item blog-list-published mr-2"><i
+                                    class="fa fa-calendar text-primary" aria-hidden="true"></i>
+                            <time itemprop="datePublished" datetime="{{ blog.createdAt }}">{{ blog.createdAt | date('d.m.Y') }}</time>
+                        </li>
+                        <li class="list-inline-item blog-list-author mr-2"><i
+                                    class="fa fa-user text-primary" aria-hidden="true"></i>
+                            <div class="d-inline text-secondary" itemprop="author" itemscope
+                                 itemtype="http://schema.org/Person"><span
+                                        itemprop="name">{{ blog.authorName }}</span>
+                            </div>
+                        </li>
+                    </ul>
+                </header>
+                <div class="blog-list-preview-text text-muted" itemprop="articleBody">
+                    <p>
+                        {{ blog.previewText | raw }}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- TODO: show only if admin -->
+    <div class="blog-admin-edit">
+        <!-- modal trigger -->
+        <button class="btn btn-warning" data-toggle="modal" data-target=".bd-example-modal-lg"><i
+                    class="fa fa-pencil" aria-hidden="true"></i>&emsp;Bearbeiten
+        </button>
+    </div>
+    <!-- /admin -->
+
+</article>

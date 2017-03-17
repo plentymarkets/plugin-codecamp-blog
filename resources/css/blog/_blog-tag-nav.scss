@@ -1,0 +1,23 @@
+//
+// blog tag nav
+//
+
+.blog-tag-nav {
+	
+	a {
+		
+		background-color: $brand-secondary;
+		@include transition($transition-base);
+		
+		&:hover,
+		&:active,
+		&.active {
+			background-color: $brand-primary;
+		}
+	}
+	
+}
+
+
+
+

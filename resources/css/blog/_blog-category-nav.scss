@@ -1,0 +1,22 @@
+//
+// blog category nav
+//
+
+.blog-cat-nav {
+	
+	a {
+		
+		color: $gray;
+		
+		&:hover,
+		&:active,
+		&.active {
+			color: $brand-primary;
+		}
+	}
+	
+}
+
+
+
+

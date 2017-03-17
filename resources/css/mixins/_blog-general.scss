@@ -1,0 +1,23 @@
+// mixins blog general
+
+
+@mixin make-responsive-card-imgs($columns: $grid-columns, $gutters: $grid-gutter-widths, $breakpoints: $grid-breakpoints) {
+
+	@each $breakpoint in map-keys($breakpoints) {
+
+		$infix: breakpoint-infix($breakpoint, $breakpoints);
+
+		@include media-breakpoint-up($breakpoint, $breakpoints) {
+			// Provide basic `.col-{bp}` classes for equal-width flexbox columns
+			.card-img#{$infix}-left {
+				@include border-left-radius($card-border-radius-inner);
+				@include border-right-radius(initial);
+			}
+			.card-img#{$infix}-right {
+				@include border-right-radius($card-border-radius-inner);
+				@include border-left-radius(initial);
+			}
+		}
+	}
+
+}

@@ -1,0 +1,33 @@
+//
+// blog admin
+//
+
+.blog-admin-edit {
+	position: absolute;
+	left: 0.5rem;
+	top: 0.5rem;
+}
+
+.blog-form .is-required {
+	
+	.form-control-label {
+		
+		font-weight: bold;
+		
+		&:after {
+			content: "*";
+		}
+	}
+	
+}
+
+.blog-list-item {
+	
+	&.blog-item-inactive > *:not(.blog-admin-edit) {
+		filter: grayscale(0.75);
+		opacity: 0.5;
+	}
+	
+}
+
+

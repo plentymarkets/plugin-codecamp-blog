@@ -1,0 +1,56 @@
+//
+// blog list item
+//
+
+.blog-list-item {
+	
+	//@include box-shadow($card-box-shadow);
+	
+	h2 {
+		font-weight: normal;
+	}
+	
+	a[class*="card-img-"] {
+		display: block;
+		width: 100%;
+	}
+	
+	img {
+		min-width: 100%;
+		min-height: 100%;
+		object-fit: cover;
+		
+		height: 16rem;
+		
+		@include media-breakpoint-up(md) {
+			height: 20rem;
+		}
+		@include media-breakpoint-up(xl) {
+			height: 24rem;
+		}
+		
+	}
+	
+	.blog-list-text-col.has-fadeout-gradient-card {
+		
+		position: relative;
+		
+		&:after {
+			content: "";
+			position: absolute;
+			display: block;
+			left: $grid-gutter-width-base / 2;
+			right: $grid-gutter-width-base / 2;
+			bottom: 1.5rem;
+			height: 6rem;
+			@include gradient-y($start-color: rgba($card-bg, 0), $end-color: rgba($card-bg, 1), $start-percent: 0%, $end-percent: 100%);
+			pointer-events: none;
+		}
+		
+	}
+	
+}
+
+
+
+

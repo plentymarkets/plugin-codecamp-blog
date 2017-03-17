@@ -1,0 +1,57 @@
+{% extends "Blog::content.PageDesign" %}
+
+{% block Body %}
+
+    <div class="container my-4">
+
+        <div class="row">
+
+            <main class="col-md-12">
+
+                <article class="card mb-4" itemscope itemtype="https://schema.org/Article">
+
+                    <div class="">
+
+                        <div class="blog-img-wrapper">
+                            <img class="blog-list-img card-img-top img-fluid d-block"
+                                 src="{{ blogEntry.imageUrl }}"
+                                 alt="Image 1" itemprop="image">
+                        </div>
+
+                        <div class="blog-text-wrapper px-4 pt-4">
+                            <div class="">
+                                <header class="text-center">
+                                    <h1 class="font-weight-normal text-primary"
+                                        itemprop="headline">{{ blogEntry.title }}</h1>
+                                    <meta itemprop="publisher" content="plentymarkets GmbH">
+                                    <ul class="blog-meta-list list-inline small text-secondary mb-4">
+                                        <li class="list-inline-item blog-list-published mr-2"><i
+                                                    class="fa fa-calendar text-primary" aria-hidden="true"></i>
+                                            <time itemprop="datePublished"
+                                                  datetime="{{ blogEntry.createdAt }}">{{ blogEntry.createdAt | date('d.m.Y') }}
+                                            </time>
+                                        </li>
+                                        <li class="list-inline-item blog-list-author mr-2"><i
+                                                    class="fa fa-user text-primary" aria-hidden="true"></i> <a
+                                                    class="d-inline text-secondary" href="#" itemprop="author" itemscope
+                                                    itemtype="http://schema.org/Person"><span
+                                                        itemprop="name">{{ blogEntry.authorName }}</span></a></li>
+                                    </ul>
+                                </header>
+                                <div class="blog-text" itemprop="text">
+                                    {{ blogEntry.text | raw }}
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </main>
+
+        </div>
+
+    </div>
+
+{% endblock %}
