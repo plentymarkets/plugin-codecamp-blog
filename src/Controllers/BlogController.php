@@ -23,6 +23,18 @@ class BlogController extends Controller
     }
 
     /**
+     * @param Twig $twig
+     * @param BlogRepositoryContract $blogRepo
+     * @return string
+     */
+    public function getAdminBlogList(Twig $twig, BlogRepositoryContract $blogRepo):string
+    {
+        $blogList = $blogRepo->getAdminBlogList();
+        $templateData = array('blogList' => $blogList);
+        return $twig->render('Blog::content.BlogAdminList', $templateData);
+    }
+
+    /**
      * @param Request $request
      * @param BlogRepositoryContract $blogRepo
      * @return string

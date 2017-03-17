@@ -1,5 +1,4 @@
-<article class="blog-list-item card mb-4"
-         itemprop="blogPost"
+<article class="blog-list-item card mb-4 {% if not blog.isActive %}blog-item-inactive{% endif %}" itemprop="blogPost"
          itemscope
          itemtype="https://schema.org/BlogPosting">
 
@@ -16,8 +15,7 @@
         <div class="blog-list-text-col has-fadeout-gradient-card col-md-6 {% if loop.index is divisible by(2) %} pr-md-0 {% else %} pl-md-0 {% endif %} d-flex">
             <div class="blog-list-text align-self-center card-block pb-1">
                 <header>
-                    <h2 class="" itemprop="headline"><a class="d-block" href="/blog/{{ blog.titleUrl }}"
-                                                        itemprop="url">Blog
+                    <h2 class="" itemprop="headline"><a class="d-block" href="/blog/{{ blog.titleUrl }}" itemprop="url">Blog
                             {{ blog.title }}</a></h2>
 
                     <meta itemprop="description" content="Preview Text">
@@ -46,4 +44,56 @@
 
     </div>
 
+    <!-- TODO: show only if admin -->
+    <div class="blog-admin-edit">
+        <!-- modal trigger -->
+        <button class="btn btn-warning" id="btnChangeActive{{ blog.id }}">
+            <i class="fa fa-pencil"
+               aria-hidden="true"></i>&emsp;{% if blog.isActive %}inaktiv setzen{% else %}aktiv setzen{% endif %}
+        </button>
+        <button class="btn btn-danger" id="btnDelete{{ blog.id }}">
+            <i class="fa fa-pencil"
+               aria-hidden="true"></i>&emsp;Blog löschen
+        </button>
+    </div>
+    <!-- /admin -->
+
 </article>
+
+<script>
+    $("#btnChangeActive{{ blog.id }}").click(function()
+    {
+        var activeState = {{ blog.isActive }};
+        activeState = activeState == 1 ? 0 : 1;
+
+        $.ajax({
+            type: "PUT",
+            url: "/blog-admin/{{ blog.titleUrl }}",
+            contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+            data: { isActive: activeState },
+            dataType: "json",
+            success: function()
+            {
+                location.reload(true);
+            }
+        });
+    });
+
+    $("#btnDelete{{ blog.id }}").click(function()
+    {
+        $.ajax({
+            type: "DELETE",
+            url: "/blog-admin/{{ blog.titleUrl }}",
+            contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+            dataType: "json",
+            //            success: function()
+            //            {
+            //                location.reload(true);
+            //            }
+        })
+            .always(function()
+            {
+                location.reload(true);
+            });
+    });
+</script>

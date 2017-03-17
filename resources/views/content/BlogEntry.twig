@@ -39,7 +39,7 @@
                                     </ul>
                                 </header>
                                 <div class="blog-text" itemprop="text">
-                                    {{ blogEntry.text | raw }}
+                                    {{ blogEntry.text | markdown | raw }}
                                 </div>
                             </div>
                         </div>

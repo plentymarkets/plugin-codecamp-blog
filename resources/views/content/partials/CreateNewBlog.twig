@@ -45,6 +45,12 @@
                         </label>
                     </div>
 
+                    <select id="plentyId" class="custom-select btn-secondary form-control-lg">
+                        {% for client in getClientList() %}
+                            <option value="{{ client.storeIdentifier }}">{{ client.name }}</option>
+                        {% endfor %}
+                    </select>
+
                     <div class="form-group is-required">
                         <label for="author" class="form-control-label">Autor</label>
                         <input type="text" class="form-control" id="author" placeholder="z.B. „Max Mustermann“">
@@ -84,7 +90,7 @@
     {
         var data =
         {
-            plentyId   : 134,
+            plentyId   : $("#plentyId").val(),
             authorName : $("#author").val(),
             title      : $("#title").val(),
             titleUrl   : $("#url").val(),
@@ -96,13 +102,12 @@
 
         $.ajax({
             type: "POST",
-            url: "/blog",
+            url: "/blog-admin",
             contentType: "application/x-www-form-urlencoded; charset=UTF-8",
             data: data,
             dataType: "json",
             success: function()
             {
-                alert("Done");
                 location.reload(true);
             }
         });

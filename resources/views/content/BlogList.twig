@@ -10,17 +10,6 @@
 
         <main class="">
 
-            <!-- TODO: show only if admin -->
-            <div class="blog-admin-create text-center my-4">
-                <!-- modal trigger -->
-                <button class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-lg"><i
-                            class="fa fa-plus"
-                            aria-hidden="true"></i>&emsp;Neuer
-                    Blog-Beitrag
-                </button>
-            </div>
-            <!-- /admin -->
-
             <div class="blog-list" itemscope itemtype="https://schema.org/Blog">
 
                 <meta itemprop="description" content="Lorem ipsum dolor sit amet, consectetuer adipiscing elit.">
@@ -32,8 +21,6 @@
                 {% endfor %}
 
             </div>
-
-            {% include "Blog::content.partials.CreateNewBlog" %}
 
         </main>
 

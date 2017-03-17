@@ -17,10 +17,11 @@ class BlogRouteServiceProvider extends RouteServiceProvider
     public function map(Router $router)
     {
         $router->get('blog','Blog\Controllers\BlogController@getBlogList');
+        $router->get('blog-admin','Blog\Controllers\BlogController@getAdminBlogList');
         $router->get('blog/{title}','Blog\Controllers\BlogController@getBlogEntry')->where('title', '[a-zA-Z_-]+');
-        $router->put('blog/{title}','Blog\Controllers\BlogController@setBlogEntryStatus')->where('title', '[a-zA-Z_-]+');
-        $router->delete('blog/{title}','Blog\Controllers\BlogController@deleteBlogEntry')->where('title', '[a-zA-Z_-]+');
-        $router->post('blog','Blog\Controllers\BlogController@createBlogEntry');
+        $router->put('blog-admin/{title}','Blog\Controllers\BlogController@setBlogEntryStatus')->where('title', '[a-zA-Z_-]+');
+        $router->delete('blog-admin/{title}','Blog\Controllers\BlogController@deleteBlogEntry')->where('title', '[a-zA-Z_-]+');
+        $router->post('blog-admin','Blog\Controllers\BlogController@createBlogEntry');
     }
 
 }
