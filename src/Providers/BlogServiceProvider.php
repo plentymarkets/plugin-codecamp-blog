@@ -2,6 +2,8 @@
 
 namespace Blog\Providers;
 
+use Blog\Contracts\BlogRepositoryContract;
+use Blog\Repositories\BlogRepository;
 use Plenty\Plugin\ServiceProvider;
 
 /**
@@ -16,6 +18,7 @@ class BlogServiceProvider extends ServiceProvider
     */
     public function register()
     {
-      $this->getApplication()->register(BlogRouteServiceProvider::class);
+        $this->getApplication()->bind(BlogRepositoryContract::class, BlogRepository::class);
+        $this->getApplication()->register(BlogRouteServiceProvider::class);
     }
 }

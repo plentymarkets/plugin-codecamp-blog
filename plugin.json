@@ -17,5 +17,5 @@
     "containers"        : [],
     "dataProviders"     : [],
     "dependencies"      : [],
-    "runOnBuild"        : []
+    "runOnBuild"        : ["Blog\\Migrations\\createBlogTable"]
 }
