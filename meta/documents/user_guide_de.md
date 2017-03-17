@@ -9,4 +9,3 @@ Dieses Plugin wurde auf dem CodeCamp 2017 live entwickelt und bietet grundlegend
 3. Wählen Sie den Mandanten.
 4. Aktivieren Sie ggf. den Blog, wenn Sie ihn live schalten möchten.
 5. Klicken Sie auf **Blog speichern**.<br /> → Der Blog-Eintrag wird in der Blog-Liste angezeigt.
-
