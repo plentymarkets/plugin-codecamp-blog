@@ -18,9 +18,9 @@ class BlogRouteServiceProvider extends RouteServiceProvider
     {
         $router->get('blog','Blog\Controllers\BlogController@getBlogList');
         $router->get('blog-admin','Blog\Controllers\BlogController@getAdminBlogList');
-        $router->get('blog/{title}','Blog\Controllers\BlogController@getBlogEntry')->where('title', '[a-zA-Z_-]+');
-        $router->put('blog-admin/{title}','Blog\Controllers\BlogController@setBlogEntryStatus')->where('title', '[a-zA-Z_-]+');
-        $router->delete('blog-admin/{title}','Blog\Controllers\BlogController@deleteBlogEntry')->where('title', '[a-zA-Z_-]+');
+        $router->get('blog/{title}','Blog\Controllers\BlogController@getBlogEntry')->where('title', '[a-zA-Z0-9_-]+');
+        $router->put('blog-admin/{title}','Blog\Controllers\BlogController@setBlogEntryStatus')->where('title', '[a-zA-Z0-9_-]+');
+        $router->delete('blog-admin/{title}','Blog\Controllers\BlogController@deleteBlogEntry')->where('title', '[a-zA-Z0-9_-]+');
         $router->post('blog-admin','Blog\Controllers\BlogController@createBlogEntry');
     }
 
