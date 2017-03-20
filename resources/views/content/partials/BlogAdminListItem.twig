@@ -15,8 +15,7 @@
         <div class="blog-list-text-col has-fadeout-gradient-card col-md-6 {% if loop.index is divisible by(2) %} pr-md-0 {% else %} pl-md-0 {% endif %} d-flex">
             <div class="blog-list-text align-self-center card-block pb-1">
                 <header>
-                    <h2 class="" itemprop="headline"><a class="d-block" href="/blog/{{ blog.titleUrl }}" itemprop="url">Blog
-                            {{ blog.title }}</a></h2>
+                    <h2 class="" itemprop="headline"><a class="d-block" href="/blog/{{ blog.titleUrl }}" itemprop="url">{{ blog.title }}</a></h2>
 
                     <meta itemprop="description" content="Preview Text">
                     <ul class="blog-meta-list list-inline small text-secondary">
