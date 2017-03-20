@@ -2,7 +2,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Neuer Blog-Beitrag</h5>
+                <h5 class="modal-title">{{ trans("Blog::Blog.createNewBlogModalTitle") }}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -10,57 +10,62 @@
             <div class="modal-body">
                 <form class="blog-form">
 
-                    <div class="text-center muted small text-uppercase text-primary">Blog Content</div>
+                    <div class="text-center muted small text-uppercase text-primary">{{ trans("Blog::Blog.createNewBlogContent") }}</div>
 
                     <div class="form-group is-required">
-                        <label for="title" class="form-control-label">Titel (H1)</label>
-                        <input type="text" class="form-control" id="title" placeholder="z.B. „Neues Blog-Template online!“">
+                        <label for="title" class="form-control-label">{{ trans("Blog::Blog.createNewBlogTitle") }}</label>
+                        <input type="text" class="form-control" id="title" placeholder="{{ trans("Blog::Blog.createNewBlogTitlePlaceholder") }}">
                     </div>
 
                     <div class="form-group">
-                        <label for="url" class="form-control-label">URL-Name</label>
-                        <input type="text" class="form-control" id="url" placeholder="z.B. „neues-blog-template-online“ (wird ggf. automatisch gefüllt)">
+                        <label for="url" class="form-control-label">{{ trans("Blog::Blog.createNewBlogTitleUrl") }}</label>
+                        <input type="text" class="form-control" id="url" placeholder="{{ trans("Blog::Blog.createNewBlogTitleUrlPlaceholder") }}">
                     </div>
 
                     <div class="form-group is-required">
-                        <label for="preview-text" class="form-control-label">Vorschautext</label>
-                        <textarea class="form-control" id="preview-text" placeholder="Kurze Teaser-Ankündigung des Blog-Themas"></textarea>
+                        <label for="preview-text" class="form-control-label">{{ trans("Blog::Blog.createNewBlogPreviewText") }}</label>
+                        <textarea class="form-control" id="preview-text" placeholder="{{ trans("Blog::Blog.createNewBlogPreviewTextPlaceholder") }}"></textarea>
                     </div>
 
                     <div class="form-group is-required">
-                        <label for="content" class="form-control-label">Text</label>
+                        <label for="content" class="form-control-label">{{ trans("Blog::Blog.createNewBlogText") }}</label>
                         <textarea class="form-control" id="content" rows="16"></textarea>
                     </div>
 
                     <div class="form-group is-required">
-                        <label for="alt" class="form-control-label">Bild URL</label>
+                        <label for="alt" class="form-control-label">{{ trans("Blog::Blog.createNewBlogImageUrl") }}</label>
                         <input type="text" class="form-control" id="imgUrl">
-                        <small class="form-text text-muted">URL des Bildes</small>
+                        <small class="form-text text-muted">{{ trans("Blog::Blog.createNewBlogImageUrlPlaceholder") }}</small>
+                    </div>
+
+
+
+                    <div class="form-group is-required">
+                        <label for="select" class="form-control-label">{{ trans("Blog::Blog.createNewBlogClient") }}</label>
+                            <select id="plentyId" class="custom-select btn-secondary form-control-lg">
+                                {% for client in getClientList() %}
+                                    <option value="{{ client.storeIdentifier }}">{{ client.name }}</option>
+                                {% endfor %}
+                            </select>
+                    </div>
+
+                    <div class="form-group is-required">
+                        <label for="author" class="form-control-label">{{ trans("Blog::Blog.createNewBlogAuthor") }}</label>
+                        <input type="text" class="form-control" id="author" placeholder="{{ trans("Blog::Blog.createNewBlogAuthorPlaceholder") }}">
                     </div>
 
                     <div class="form-check">
                         <label class="form-check-label">
                             <input id="isActive" type="checkbox" class="form-check-input">
-                            Öffentlich
+                            {{ trans("Blog::Blog.createNewBlogIsActive") }}
                         </label>
-                    </div>
-
-                    <select id="plentyId" class="custom-select btn-secondary form-control-lg">
-                        {% for client in getClientList() %}
-                            <option value="{{ client.storeIdentifier }}">{{ client.name }}</option>
-                        {% endfor %}
-                    </select>
-
-                    <div class="form-group is-required">
-                        <label for="author" class="form-control-label">Autor</label>
-                        <input type="text" class="form-control" id="author" placeholder="z.B. „Max Mustermann“">
                     </div>
 
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close" aria-hidden="true"></i>&emsp;Abbrechen</button>
-                <button id="saveNewBlog" type="button" class="btn btn-success"><i class="fa fa-save" aria-hidden="true"></i>&emsp;Speichern</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close" aria-hidden="true"></i>&emsp;{{ trans("Blog::Blog.createNewBlogCancel") }}</button>
+                <button id="saveNewBlog" type="button" class="btn btn-success"><i class="fa fa-save" aria-hidden="true"></i>&emsp;{{ trans("Blog::Blog.createNewBlogSave") }}</button>
             </div>
         </div>
     </div>

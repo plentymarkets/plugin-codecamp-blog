@@ -17,7 +17,7 @@
                 <header>
                     <h2 class="" itemprop="headline"><a class="d-block" href="/blog/{{ blog.titleUrl }}" itemprop="url">{{ blog.title }}</a></h2>
 
-                    <meta itemprop="description" content="Preview Text">
+                    <meta itemprop="description" content="{{ trans("Blog::Blog.blogAdminListItemMetaDescription") }}">
                     <ul class="blog-meta-list list-inline small text-secondary">
                         <li class="list-inline-item blog-list-published mr-2"><i
                                     class="fa fa-calendar text-primary" aria-hidden="true"></i>
@@ -48,11 +48,11 @@
         <!-- modal trigger -->
         <button class="btn btn-warning" id="btnChangeActive{{ blog.id }}">
             <i class="fa fa-pencil"
-               aria-hidden="true"></i>&emsp;{% if blog.isActive %}inaktiv setzen{% else %}aktiv setzen{% endif %}
+               aria-hidden="true"></i>&emsp;{% if blog.isActive %}{{ trans("Blog::Blog.blogAdminListItemSetInactive") }}{% else %}{{ trans("Blog::Blog.blogAdminListItemSetActive") }}{% endif %}
         </button>
         <button class="btn btn-danger" id="btnDelete{{ blog.id }}">
             <i class="fa fa-pencil"
-               aria-hidden="true"></i>&emsp;Blog löschen
+               aria-hidden="true"></i>&emsp;{{ trans("Blog::Blog.blogAdminListItemDeleteBlog") }}
         </button>
     </div>
     <!-- /admin -->

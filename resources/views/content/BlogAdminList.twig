@@ -3,7 +3,7 @@
 {% block Body %}
 
     <div class="container text-center my-4">
-        <h1>Blog</h1>
+        <h1>{{ trans("Blog::Blog.blogAdminListTitle") }}</h1>
     </div>
 
     <div class="container my-4">
@@ -15,15 +15,14 @@
                 <!-- modal trigger -->
                 <button class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-lg"><i
                             class="fa fa-plus"
-                            aria-hidden="true"></i>&emsp;Neuer
-                    Blog-Beitrag
+                            aria-hidden="true"></i>&emsp;{{ trans("Blog::Blog.blogAdminListNewBlog") }}
                 </button>
             </div>
             <!-- /admin -->
 
             <div class="blog-list" itemscope itemtype="https://schema.org/Blog">
 
-                <meta itemprop="description" content="Lorem ipsum dolor sit amet, consectetuer adipiscing elit.">
+                <meta itemprop="description" content="{{ trans("Blog::Blog.blogAdminListMetaDescription") }}">
 
                 {% for blog in blogList %}
 
