@@ -1,12 +1,12 @@
 ![plentymarkets Logo](http://www.plentymarkets.eu/layout/pm/images/logo/plentymarkets-logo.jpg)
 
-# Blog plugin for plentymarkets online stores
+# CodeCamp 2017 Blog plugin
 
-This is the official **Blog** plugin developed by plentymarkets. Integrate the blog in your plentymarkets 7 online store.
+This is the **Blog** plugin developed by plentymarkets during the CodeCamp 2017 coding session.
 
 ## Requirements
 
-This is a plugin for [plentymarkets 7](https://www.plentymarkets.com). A layout plugin is required in order to integrate this blog in your online store. We recommend using the plentymarkets plugin [Ceres](https://github.com/plentymarkets/plugin-ceres).
+This is a plugin for [plentymarkets 7](https://www.plentymarkets.com).
 
 ## Installing
 
