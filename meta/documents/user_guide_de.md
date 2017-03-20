@@ -4,7 +4,8 @@ Dieses Plugin wurde auf dem CodeCamp 2017 live entwickelt und bietet grundlegend
 
 ## Blog-Eintrag schreiben
 
-1. Öffnen Sie die Route `blog/admin`.<br /> → Die Admin-Seite des Blogs wird geöffnet.
+1. Öffnen Sie die Route `/blog-admin`.<br /> → Die Admin-Seite des Blogs wird geöffnet.
+2. Klicken Sie auf **Neuer Blog**.
 2. Füllen Sie die Eingabefelder aus.
 3. Wählen Sie den Mandanten.
 4. Aktivieren Sie ggf. den Blog, wenn Sie ihn live schalten möchten.
