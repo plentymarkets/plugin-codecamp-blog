@@ -16,8 +16,8 @@ use Plenty\Modules\Plugin\DataBase\Contracts\Model;
  * @property string  $text
  * @property string  $imageUrl
  * @property boolean $isActive
- * @property string  $createdAt
- * @property string  $updatedAt
+ * @property int  $createdAt
+ * @property int  $updatedAt
  */
 class BlogData extends Model
 {
@@ -32,8 +32,8 @@ class BlogData extends Model
     public $text            = '';
     public $imageUrl        = '';
     public $isActive        = false;
-    public $createdAt       = '';
-    public $updatedAt       = '';
+    public $createdAt       = 0;
+    public $updatedAt       = 0;
 
 
     public function getTableName(): string

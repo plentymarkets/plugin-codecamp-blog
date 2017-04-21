@@ -63,6 +63,6 @@ class BlogTwigExtension extends Twig_Extension
     public function getClientList():array
     {
         $clientList = pluginApp(WebstoreRepositoryContract::class)->loadAll();
-        return $clientList->toArray() ?? [];
+        return $clientList;
     }
 }

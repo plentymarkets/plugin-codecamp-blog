@@ -18,6 +18,11 @@ interface BlogRepositoryContract
      */
     public function getBlogList(): array;
 
+     /**
+     * @return array
+     */
+    public function getAdminBlogList(): array;
+
     /**
      * @param $title
      * @return BlogData
